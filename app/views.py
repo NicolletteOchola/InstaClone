@@ -45,5 +45,41 @@ def register(request):
     form = RegisterForm()
   return render(request, 'registration/registration_form.html', {'form':form}) 
 
- 
+@login_required(login_url='accounts/login/')
+def search_images(request):
+  if 'keyword' in request.GET and request.GET["keyword"]:
+    search_term = request.GET.get("keyword")
+    searched_images = Image.search_images(search_term)
+    message = f"{search_term}"
 
+    return render(request, 'search.html', {"message":message,"images": searched_images})
+
+  else:
+     message = "Not a search term"
+     return render(request, 'search.html', {"message": message})
+
+@login_required(login_url='/accounts/login/')
+def get_image(request, id):
+  comments = Comment.get_comment()
+
+  try:
+    image = Image.objects.get(pk=id)
+
+  except ObjectDoesNotExist:
+    raise Http404()
+
+  current_user = request.user
+  if request.method == 'POST':
+    form = NewCommentForm(request.POST, auto_id=False)
+    img_id = request.POST['image_id']
+    if form.is_valid():
+      comment = form.save(commit=False)
+      comment.author = current_user
+      image = Image.get_image(img_id)
+      comment.image = image
+      comment.save()
+
+      return redirect(f'/image/{img_id}',)
+    else:
+      form = NewCommentForm(auto_id=False)
+    return render(request, "images.html", {"image":image, "form":form, "comments":comments})

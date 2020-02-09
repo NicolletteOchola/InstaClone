@@ -12,3 +12,6 @@ urlpatterns = [
   url(r'^like/(\d+)', views.like_image, name='like_image'),
 
   ]
+
+if settings.DEBUG:
+  urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

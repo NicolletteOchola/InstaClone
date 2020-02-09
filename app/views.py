@@ -78,8 +78,24 @@ def get_image(request, id):
       image = Image.get_image(img_id)
       comment.image = image
       comment.save()
+    return redirect(f'/image/{img_id}',)
 
-      return redirect(f'/image/{img_id}',)
-    else:
-      form = NewCommentForm(auto_id=False)
-    return render(request, "images.html", {"image":image, "form":form, "comments":comments})
+  else:
+    form = NewCommentForm(auto_id=False)
+  return render(request, "images.html", {"image":image, "form":form, "comments":comments})
+
+@login_required(login_url='/accounts/login/')
+def new_image(request):
+  current_user = request.user
+  if request.method == 'POST':
+    form = NewImageForm(request.POST, request.FILES)
+    if form.is_valid():
+      image = form.save(commit=False)
+      image.Author = current_user
+      image.save()
+    return redirect('index')
+
+  else:
+    form = NewImageForm()
+  return render(request, 'new-image.html', {"form": form})
+    

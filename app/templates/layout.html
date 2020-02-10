@@ -7,12 +7,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png">
+  
 
   {% if title %}
   <title>Instagram - {{title}}</title>
-  {{% else %}}
+  {% else %}
   <title>Instagram</title>
   {% endif %}
 
@@ -34,8 +33,6 @@
 <body class="grey lighten-5">
   {% include "navbar.html" %}
 
-  {% block content %}
-
   {% block scripts %}
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <!-- JQuery -->
@@ -49,7 +46,7 @@
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/js/mdb.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
-  <script type="text/javascript" src="{% static 'script.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/scripts.js' %}"></script>
 
 
   {% endblock %}

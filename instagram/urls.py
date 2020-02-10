@@ -17,6 +17,9 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from django.conf.urls.static import static
 from django.conf import settings
+from django.contrib.auth import views
+from registration.backends.simple.views import RegistrationView
+from app.forms import RegisterForm
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),

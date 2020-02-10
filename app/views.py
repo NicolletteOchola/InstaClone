@@ -28,7 +28,7 @@ def index(request):
     return redirect(f'/#{img_id}',)
   else:
     form = NewCommentForm(auto_id=False)
-  return render(request, 'index.html', {"date": date, "images":images, "comments":comments, "form": form,})
+  return render(request, 'index.html', {"date": date, "images":images, "form": form,})
 
 def register(request):
   if request.method == 'POST':
@@ -109,7 +109,7 @@ def user_profiles(request):
     form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
     if form.is_valid():
       profile = form.save(commit=False)
-       profile.save()
+      profile.save()
     return redirect('profile')
 
   else:

@@ -6,8 +6,19 @@ h1
 html, body {
   position: relative;
   min-height: 100%;
+  
+}
+.title {
+  font-family: 'Satisfy', cursive;
 }
 
+.title1 {
+  font-family: 'Archivo Narrow', sans-serif;
+}
+
+footer {
+  font-family: 'Satisfy', cursive;
+}
 /* // Within style tags in your html file */
 * { box-sizing: border-box; }
 
@@ -70,4 +81,8 @@ html, body {
 
 label {
   display: none;
+}
+
+.title {
+  font-family: 'Satisfy', cursive;
 }

@@ -10,7 +10,7 @@
 
 
   {% if title %}
-  <title>Instagram - {{title}}</title>
+  <title class="title">Instagram - {{title}}</title>
   {% else %}
   <title>Instagram</title>
   {% endif %}
@@ -23,6 +23,8 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
   <!-- Material Design Bootstrap -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/css/mdb.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow|Satisfy&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
   <link rel="stylesheet" href="{% static 'css/main.css' %}">
@@ -53,10 +55,10 @@
 
   <div class="mb-4 pb-4"></div>
   <!-- Footer -->
-  <footer class="page-footer font-small primary-color-dark mt-4 pt-4">
+  <footer class="page-footer font-small bg-white">
 
     <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">© 2020 Copyright.
+    <div class="footer-copyright font-small text-center py-3 bg-dark pt-4">© 2020 Copyright.
       <a href="https://github.com/NicolletteOchola"> Nicollette Ochola</a>
     </div>
     <!-- Copyright -->

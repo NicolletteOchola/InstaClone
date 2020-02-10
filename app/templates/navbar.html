@@ -7,7 +7,7 @@
 </head>
 <body>
 <!--Navbar-->
-<nav class="pl-5 pr-5 navbar navbar-expand-lg navbar-dark primary-color sticky-top">
+<nav class="pl-5 pr-5 navbar navbar-expand-lg navbar-light bg-light sticky-top">
 
     <!-- Navbar brand -->
     <a class="navbar-brand font-weight-bold" href="{% url 'index' %}">Instagram</a>
@@ -22,10 +22,10 @@
     <div class="collapse navbar-collapse" id="basicExampleNav">
   
       <!-- Links -->
-      <ul class="navbar-nav mr-auto">
+      <!-- <ul class="navbar-nav mr-auto">
           <li class="text-white nav-item">
             <a class="nav-link" href="{% url 'index' %}">Home</a>
-          </li>
+          </li> -->
           
         </li>
         {% if user.is_authenticated %}
@@ -69,8 +69,8 @@
               </ul>
               {% else %}
               <li class="list-unstyled">
-                  <a class='btn btn-sm btn-default font-weight-bold' href="/accounts/login">Login</a>
-                  <a class='btn btn-sm btn-default font-weight-bold' href="/accounts/register">Register</a>
+                  <a class="btn purple-gradient"' href="/accounts/login">Login</a>
+                  <a class="btn purple-gradient" href="/accounts/register">Register</a>
               </li>
 
               {% endif %}

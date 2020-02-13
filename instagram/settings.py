@@ -88,8 +88,8 @@ DATABASES = {
         'NAME': 'instagram',
         'USER': 'nicole',
         'PASSWORD': '1997',
-        'PORT':'5432',
-        
+        'port' = '5432',
+        'listen_addresses'='*' 
     }
 }
 

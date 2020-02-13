@@ -14,9 +14,6 @@ Nicollette Ochola
 - Bootstrap (MDB bootstrap)
 - Javascript
 
-## Screenshots
-![alt text](sc.png)
-
 ## Setup Requirements
 - Python 3.6
 - Internet Connection
